@@ -2,13 +2,13 @@
 id: a0b57754-b285-4e14-8b2a-9f434f253217
 title: Start_here
 desc: ''
-updated: 1620822585064
+updated: 1620823528780
 created: 1620605285317
 ---
 
 # Getting started
 
-The training program is heavily focused on C# and the .NET ecosystem with a minor emphasis on "Line of Business" (LOB) Applications.
+The training program is heavily focused on C# and the .NET ecosystem with a minor emphasis on "Line of Business" (LOB) applications.
 
 Our goal in designing this training program is to make it as entertaining as possible and leverage the best resources the internet has to offer.
 
@@ -17,7 +17,7 @@ Microsoft has put together an excellent documentation site to get started with C
 ## First Steps
 
 1. Before you continue please make sure you read the [[readme]] document
-2. Quickly read through the "[Tour of C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)" section to get a high-level overview of the C# language (Don't worry if it doesn't mean a lot to you, yet.)
+2. Quickly read through the "[Tour of C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)" section to get a high-level overview of the C# language. (Don't worry if it doesn't mean a lot to you, yet.)
 
 Don't skip this step. Find a piece of paper, and write down all the keywords you come across that mean absolutely nothing to you.
 
@@ -33,7 +33,7 @@ Microsoft provides several options to complete the tutorials. Find the one that 
 
 Write down the topics you struggle with the most. Send us a photo of what you wrote down. (If some topics seem really easy, you can skip them.)
 
-4. The documentation has a whole section on [C# concepts](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/features)
+4. The documentation has a whole section on [C# concepts](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/)
 
 ![Concepts](./assets/images/modules.start_here/2021-05-12-22-08-29.png)
 
