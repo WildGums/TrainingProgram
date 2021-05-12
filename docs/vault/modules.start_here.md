@@ -2,7 +2,7 @@
 id: a0b57754-b285-4e14-8b2a-9f434f253217
 title: Start_here
 desc: ''
-updated: 1620822141658
+updated: 1620822585064
 created: 1620605285317
 ---
 
@@ -25,7 +25,7 @@ Once you have finished. Take a picture of the piece of paper and send it to us.
 
 Congratulation! the very act of writing these words down on paper is a significant step towards preparing your brain to fill in the "knowledge blanks".
 
-![](/assets/images/modules.start_here/2021-05-12-21-25-11.png)
+![Get started](./assets/images/modules.start_here/2021-05-12-21-25-11.png)
 
 3. Complete the [turorials](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/)
 
@@ -35,7 +35,7 @@ Write down the topics you struggle with the most. Send us a photo of what you wr
 
 4. The documentation has a whole section on [C# concepts](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/features)
 
-![](/assets/images/modules.start_here/2021-05-12-22-08-29.png)
+![Concepts](./assets/images/modules.start_here/2021-05-12-22-08-29.png)
 
 These are all the topics you need to become familiar with over the coming months. Bookmark these pages and refer to them when you are ready to learn these topics.
 
