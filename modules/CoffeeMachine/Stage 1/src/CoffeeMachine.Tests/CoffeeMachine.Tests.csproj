@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scenarios\Exit.txt" />
+    <None Remove="Scenarios\Greeting.txt" />
+    <None Remove="Scenarios\Greeting2.txt" />
+    <None Remove="Scenarios\MakeCoffee.txt" />
+    <None Remove="Scenarios\WrongChoice.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scenarios\Exit.txt" />
+    <EmbeddedResource Include="Scenarios\MakeCoffee.txt" />
+    <EmbeddedResource Include="Scenarios\WrongChoice.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoffeeMachine\CoffeeMachine.csproj" />
+  </ItemGroup>
+
+</Project>
