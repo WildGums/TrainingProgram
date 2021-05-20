@@ -52,6 +52,11 @@ namespace CoffeeMachine.Tests
                     if (command.Equals(">>"))
                     {
                         var outputLine = output.ReadLine();
+                        if (!string.Equals(text, outputLine, StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            FinalizeConsoleApplication(_process);
+                        }
+
                         StringAssert.AreEqualIgnoringCase(text, outputLine);
                     }
 
@@ -97,7 +102,10 @@ namespace CoffeeMachine.Tests
 
         private static int FinalizeConsoleApplication(Process proc)
         {
-            proc.WaitForExit(100);
+            if (!proc.HasExited)
+            {
+                proc.WaitForExit(100);
+            }
 
             if (!proc.HasExited)
             {
