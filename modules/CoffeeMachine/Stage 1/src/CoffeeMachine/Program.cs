@@ -7,6 +7,8 @@ namespace CoffeeMachine
     {
         static void Main(string[] args)
         {
+            CoffeeMachine coffeeMachine = new CoffeeMachine();
+            coffeeMachine.Use();
         }
     }
 }
