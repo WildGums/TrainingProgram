@@ -24,7 +24,7 @@ digraph ConceptsMap {
 		"Loop and branch statements" -> "While";
 		"Loop and branch statements" -> "Switch";
 		
-		label = "Stage 1 Concepts";
+		label = "Stage 2 Concepts";
 	}
 
 }
