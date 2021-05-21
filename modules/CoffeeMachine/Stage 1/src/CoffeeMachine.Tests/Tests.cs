@@ -44,20 +44,24 @@ namespace CoffeeMachine.Tests
                 string line;
                 while ((line = scenarioReader.ReadLine()) is not null)
                 {
+                    if (string.IsNullOrWhiteSpace(line))
+                    {
+                        continue;
+                    }
+
                     var command = line.Substring(0, 2);
                     var text = line.Substring(2);
+
+                    if (_process.HasExited)
+                    {
+
+                    }
 
                     // TODO: handle error
 
                     if (command.Equals(">>"))
                     {
-                        var outputLine = output.ReadLine();
-                        if (!string.Equals(text, outputLine, StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            FinalizeConsoleApplication(_process);
-                        }
-
-                        StringAssert.AreEqualIgnoringCase(text, outputLine);
+                        AssertOutput(output, text);
                     }
 
                     if (command.Equals("<<"))
@@ -65,6 +69,21 @@ namespace CoffeeMachine.Tests
                         input.WriteLine(text);
                     }
                 }
+            }
+        }
+
+        private void AssertOutput(StreamReader output, string text)
+        {
+            var read = output.ReadLineAsync();
+            read.Wait(100);
+            if (read.IsCompleted)
+            {
+                var outputLine = read.Result;
+                StringAssert.AreEqualIgnoringCase(text, outputLine);
+            }
+            else
+            {
+                throw new AssertionException($"Awaiting for expected output '{text}' has timed out");
             }
         }
 
@@ -88,6 +107,7 @@ namespace CoffeeMachine.Tests
             proc.StartInfo.Arguments = arguments;
 
             proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.CreateNoWindow = true;
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.RedirectStandardError = true;
