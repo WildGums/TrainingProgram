@@ -1,0 +1,95 @@
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add ingredients
+>>3. Get money
+>>0. Back
+<<1
+>>Coffe beans 400 g
+>>Sugar 300 g
+>>Milk 100 ml
+>>Water 2000 ml
+>>3 cups
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add ingredients
+>>3. Get money
+>>0. Back
+<<0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<1
+>>Good choice, enjoy your coffee!
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<1
+>>Good choice, enjoy your coffee!
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<1
+>>Good choice, enjoy your coffee!
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<1
+>>Impossible to do!
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add ingredients
+>>3. Get money
+>>0. Back
+<<1
+>>Coffe beans 310 g
+>>Sugar 270 g
+>>Milk 70 ml
+>>Water 1850 ml
+>>0 cups
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add ingredients
+>>3. Get money
+>>0. Back
+<<0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<0
+>>Have a good day!
