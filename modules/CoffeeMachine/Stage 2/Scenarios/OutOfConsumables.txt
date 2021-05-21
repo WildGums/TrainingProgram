@@ -8,8 +8,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<1
 >>Coffe beans 400 g
@@ -21,8 +19,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<0
 >>
@@ -68,8 +64,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<1
 >>Coffe beans 310 g
@@ -81,8 +75,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<0
 >>
