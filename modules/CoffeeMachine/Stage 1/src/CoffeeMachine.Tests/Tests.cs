@@ -52,28 +52,36 @@ namespace CoffeeMachine.Tests
                     var command = line.Substring(0, 2);
                     var text = line.Substring(2);
 
-                    if (_process.HasExited)
-                    {
-
-                    }
-
                     // TODO: handle error
 
-                    if (command.Equals(">>"))
+                    switch (command)
                     {
-                        AssertOutput(output, text);
-                    }
+                        case ">>":
+                            AssertOutput(output, text);
+                            break;
 
-                    if (command.Equals("<<"))
-                    {
-                        input.WriteLine(text);
+                        case "<<":
+                            AssertInput(input, text);
+                            break;
+
+                        default:
+                            break;
                     }
                 }
             }
         }
 
+        private void AssertInput(StreamWriter input, string text)
+        {
+            Assert.IsFalse(_process.HasExited, "Expected input, but the program has exited");
+
+            input.WriteLine(text);
+        }
+
         private void AssertOutput(StreamReader output, string text)
         {
+            Assert.IsFalse(_process.HasExited, $"Expected output '{text}', but the program has exited");
+
             var read = output.ReadLineAsync();
             read.Wait(100);
             if (read.IsCompleted)
