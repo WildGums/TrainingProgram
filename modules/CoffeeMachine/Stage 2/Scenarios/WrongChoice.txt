@@ -19,5 +19,5 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
->>0
+<<0
 >>Have a good day!

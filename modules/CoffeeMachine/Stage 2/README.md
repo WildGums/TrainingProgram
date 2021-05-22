@@ -17,3 +17,8 @@ for making one portion of coffe you need:
 30g of coffee
 50ml of water
 10 ml of milk
+
+Look at the links below, this might help you clarify:  
+[Properties](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties)  
+[Operators and expressions](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/)  
+[Switch statement](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch)  

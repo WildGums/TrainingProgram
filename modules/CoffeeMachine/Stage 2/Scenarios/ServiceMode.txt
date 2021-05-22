@@ -8,8 +8,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<9
 >>Wrong choice :) Try again ;)
@@ -17,8 +15,6 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
->>2. Add ingredients
->>3. Get money
 >>0. Back
 <<0
 >>
@@ -27,5 +23,4 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
->>0
 >>Have a good day!

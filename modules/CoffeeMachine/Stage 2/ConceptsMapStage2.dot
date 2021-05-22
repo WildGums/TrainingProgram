@@ -1,0 +1,30 @@
+
+digraph ConceptsMap {
+
+	subgraph cluster_0 {
+		style=filled;
+		color="#00c77b";
+        
+		node [style = filled color = "#bdffd7" shape = box] Namespaces;
+        node [] Variables;
+		node [] "Operators and expressions";
+		node [] Strings;
+        node [] "Loop and branch statements";
+		node [] "Console and its methods";
+        node [] Classes;
+
+        Classes -> Methods;
+		Classes -> Properties;
+		Classes -> Constructor;
+
+		"Console and its methods" -> "WriteLine";
+		"Console and its methods" -> "ReadLine";
+
+		"Loop and branch statements" -> "If  - else"
+		"Loop and branch statements" -> "While";
+		"Loop and branch statements" -> "Switch";
+		
+		label = "Stage 2 Concepts";
+	}
+
+}
