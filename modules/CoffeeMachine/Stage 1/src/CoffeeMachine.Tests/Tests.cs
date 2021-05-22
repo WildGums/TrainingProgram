@@ -39,27 +39,72 @@ namespace CoffeeMachine.Tests
             var input = process.StandardInput;
             var error = process.StandardError;
 
-            using(var scenarioReader = new StringReader(scenario))
+            using (var scenarioReader = new StringReader(scenario))
             {
                 string line;
                 while ((line = scenarioReader.ReadLine()) is not null)
                 {
+                    if (string.IsNullOrWhiteSpace(line))
+                    {
+                        continue;
+                    }
+
                     var command = line.Substring(0, 2);
                     var text = line.Substring(2);
 
                     // TODO: handle error
 
-                    if (command.Equals(">>"))
+                    switch (command)
                     {
-                        var outputLine = output.ReadLine();
-                        StringAssert.AreEqualIgnoringCase(text, outputLine);
-                    }
+                        case ">>":
+                            AssertOutput(output, text);
+                            break;
 
-                    if (command.Equals("<<"))
-                    {
-                        input.WriteLine(text);
+                        case "<<":
+                            AssertInput(input, text);
+                            break;
+
+                        default:
+                            break;
                     }
                 }
+            }
+
+            AssertEndOfOutput(output);
+            AssertEndOfProgramm();
+        }
+
+        private void AssertEndOfProgramm()
+        {
+            Assert.IsTrue(_process.HasExited, "Has the program exited?");
+        }
+
+        private static void AssertEndOfOutput(StreamReader output)
+        {
+            Assert.IsTrue(output.EndOfStream, $"Expected end of output, but was:\n{output.ReadToEnd()}");
+        }
+
+        private void AssertInput(StreamWriter input, string text)
+        {
+            Assert.IsFalse(_process.HasExited, "Expected input, but the program has exited");
+
+            input.WriteLine(text);
+        }
+
+        private void AssertOutput(StreamReader output, string text)
+        {
+            var read = output.ReadLineAsync();
+            read.Wait(100);
+            if (read.IsCompleted)
+            {
+                var outputLine = read.Result;
+
+                Assert.IsNotNull(outputLine, $"Expected output line '{text}' but was nothing");
+                StringAssert.AreEqualIgnoringCase(text, outputLine);
+            }
+            else
+            {
+                throw new AssertionException($"Awaiting for expected output '{text}' has timed out");
             }
         }
 
@@ -75,7 +120,7 @@ namespace CoffeeMachine.Tests
             }
         }
 
-        private static Process StartConsoleApplication(string arguments)
+        private Process StartConsoleApplication(string arguments)
         {
             Process proc = new Process();
             proc.StartInfo.FileName = "CoffeeMachine.exe";
@@ -83,6 +128,7 @@ namespace CoffeeMachine.Tests
             proc.StartInfo.Arguments = arguments;
 
             proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.CreateNoWindow = true;
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.RedirectStandardError = true;
@@ -97,7 +143,10 @@ namespace CoffeeMachine.Tests
 
         private static int FinalizeConsoleApplication(Process proc)
         {
-            proc.WaitForExit(100);
+            if (!proc.HasExited)
+            {
+                proc.WaitForExit(100);
+            }
 
             if (!proc.HasExited)
             {
