@@ -39,7 +39,7 @@ namespace CoffeeMachine.Tests
             var input = process.StandardInput;
             var error = process.StandardError;
 
-            using(var scenarioReader = new StringReader(scenario))
+            using (var scenarioReader = new StringReader(scenario))
             {
                 string line;
                 while ((line = scenarioReader.ReadLine()) is not null)
@@ -69,6 +69,19 @@ namespace CoffeeMachine.Tests
                     }
                 }
             }
+
+            AssertEndOfOutput(output);
+            AssertEndOfProgramm();
+        }
+
+        private void AssertEndOfProgramm()
+        {
+            Assert.IsTrue(_process.HasExited, "Has the program exited?");
+        }
+
+        private static void AssertEndOfOutput(StreamReader output)
+        {
+            Assert.IsTrue(output.EndOfStream, $"Expected end of output, but was:\n{output.ReadToEnd()}");
         }
 
         private void AssertInput(StreamWriter input, string text)
@@ -80,13 +93,13 @@ namespace CoffeeMachine.Tests
 
         private void AssertOutput(StreamReader output, string text)
         {
-            Assert.IsFalse(_process.HasExited, $"Expected output '{text}', but the program has exited");
-
             var read = output.ReadLineAsync();
             read.Wait(100);
             if (read.IsCompleted)
             {
                 var outputLine = read.Result;
+
+                Assert.IsNotNull(outputLine, $"Expected output line '{text}' but was nothing");
                 StringAssert.AreEqualIgnoringCase(text, outputLine);
             }
             else
@@ -107,7 +120,7 @@ namespace CoffeeMachine.Tests
             }
         }
 
-        private static Process StartConsoleApplication(string arguments)
+        private Process StartConsoleApplication(string arguments)
         {
             Process proc = new Process();
             proc.StartInfo.FileName = "CoffeeMachine.exe";
