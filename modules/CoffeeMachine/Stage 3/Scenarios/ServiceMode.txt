@@ -2,8 +2,13 @@
 >>Hello, how can I help you?
 >>1. Make coffee
 >>0. Exit
-<<1
->>Good choice, enjoy your coffee!
+<<2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>0. Back
+<<0
 >>
 >>=====
 >>Hello, how can I help you?
