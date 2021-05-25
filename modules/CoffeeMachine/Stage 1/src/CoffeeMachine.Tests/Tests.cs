@@ -49,24 +49,23 @@ namespace CoffeeMachine.Tests
                         continue;
                     }
 
-                    var command = line.Substring(0, 2);
-                    var text = line.Substring(2);
+                    if(line.StartsWith(">>"))
+                    {
+                        var text = line.Substring(2);
+                        AssertOutput(output, text);
+                        continue;
+                    }
+
+                    if (line.StartsWith("<<"))
+                    {
+                        var text = line.Substring(2);
+                        AssertInput(input, text);
+                        continue;
+                    }
+
+                    AssertInput(input, line);
 
                     // TODO: handle error
-
-                    switch (command)
-                    {
-                        case ">>":
-                            AssertOutput(output, text);
-                            break;
-
-                        case "<<":
-                            AssertInput(input, text);
-                            break;
-
-                        default:
-                            break;
-                    }
                 }
             }
 
@@ -88,6 +87,8 @@ namespace CoffeeMachine.Tests
         {
             Assert.IsFalse(_process.HasExited, "Expected input, but the program has exited");
 
+            Console.WriteLine($"<<{text}");
+
             input.WriteLine(text);
         }
 
@@ -98,6 +99,8 @@ namespace CoffeeMachine.Tests
             if (read.IsCompleted)
             {
                 var outputLine = read.Result;
+
+                Console.WriteLine($">>{outputLine}");
 
                 Assert.IsNotNull(outputLine, $"Expected output line '{text}' but was nothing");
                 StringAssert.AreEqualIgnoringCase(text, outputLine);
