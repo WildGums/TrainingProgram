@@ -3,13 +3,14 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<2
+2
 >>
 >>=====
 >>Service mode:
 >>1. Show remainings
+>>2. Add supplies
 >>0. Back
-<<1
+1
 >>Coffe beans 400 g
 >>Sugar 300 g
 >>Milk 100 ml
@@ -19,67 +20,14 @@
 >>=====
 >>Service mode:
 >>1. Show remainings
+>>2. Add supplies
 >>0. Back
-<<0
+0
 >>
 >>=====
 >>Hello, how can I help you?
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<1
->>
->>=====
->>What type of coffee do you prefer?
->>1. Americano
->>2. Capuccino
->>0. Back
-<<1
->>Good choice, enjoy your coffee!
->>
->>=====
->>Hello, how can I help you?
->>1. Make coffee
->>2. Service mode
->>0. Exit
-<<1
->>
->>=====
->>What type of coffee do you prefer?
->>1. Americano
->>2. Capuccino
->>0. Back
-<<2
->>Good choice, enjoy your coffee!
->>
->>=====
->>Hello, how can I help you?
->>1. Make coffee
->>2. Service mode
->>0. Exit
-<<2
->>
->>=====
->>Service mode:
->>1. Show remainings
->>0. Back
-<<1
->>Coffe beans 330 g
->>Sugar 285 g
->>Milk 50 ml
->>Water 1900 ml
->>1 cups
->>
->>=====
->>Service mode:
->>1. Show remainings
->>0. Back
-<<0
->>
->>=====
->>Hello, how can I help you?
->>1. Make coffee
->>2. Service mode
->>0. Exit
-<<0
+0
 >>Have a good day!

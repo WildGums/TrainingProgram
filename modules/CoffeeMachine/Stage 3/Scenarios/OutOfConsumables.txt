@@ -3,14 +3,14 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<1
+1
 >>
 >>=====
 >>What type of coffee do you prefer?
 >>1. Americano
 >>2. Capuccino
 >>0. Back
-<<1
+1
 >>Good choice, enjoy your coffee!
 >>
 >>=====
@@ -18,14 +18,14 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<1
+1
 >>
 >>=====
 >>What type of coffee do you prefer?
 >>1. Americano
 >>2. Capuccino
 >>0. Back
-<<2
+2
 >>Good choice, enjoy your coffee!
 >>
 >>=====
@@ -33,14 +33,14 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<1
+1
 >>
 >>=====
 >>What type of coffee do you prefer?
 >>1. Americano
 >>2. Capuccino
 >>0. Back
-<<1
+1
 >>Good choice, enjoy your coffee!
 >>
 >>=====
@@ -48,14 +48,14 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<1
+1
 >>
 >>=====
 >>What type of coffee do you prefer?
 >>1. Americano
 >>2. Capuccino
 >>0. Back
-<<2
+2
 >>Impossible to do!
 >>
 >>=====
@@ -63,5 +63,5 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<0
+0
 >>Have a good day!
