@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -7,17 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scenarios\Exit.txt" />
     <None Remove="Scenarios\Greeting.txt" />
     <None Remove="Scenarios\Greeting2.txt" />
     <None Remove="Scenarios\MakeCoffee.txt" />
-    <None Remove="Scenarios\WrongChoice.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Scenarios\Exit.txt" />
-    <EmbeddedResource Include="Scenarios\MakeCoffee.txt" />
-    <EmbeddedResource Include="Scenarios\WrongChoice.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +20,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoffeeMachine\CoffeeMachine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scenarios\" />
   </ItemGroup>
 
 </Project>

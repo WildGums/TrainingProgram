@@ -24,9 +24,7 @@ namespace CoffeeMachine.Tests
             FinalizeConsoleApplication(_process);
         }
 
-        [TestCase("Exit")]
-        [TestCase("MakeCoffee")]
-        [TestCase("WrongChoice")]
+        [TestCase("")]
         public void TestScenario(string scenarioName)
         {
             var scenario = LoadScenario(scenarioName);
