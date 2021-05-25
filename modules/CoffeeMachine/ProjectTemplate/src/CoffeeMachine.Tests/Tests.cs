@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -10,70 +12,109 @@ namespace CoffeeMachine.Tests
     [TestFixture]
     public class Tests
     {
-        private Process _process;
+        private readonly Assembly _assembly;
+        private readonly string _resourcePrefix;
 
-        [SetUp]
-        public void SetUp()
+        public Tests()
         {
-            _process = StartConsoleApplication("");
+            _assembly = Assembly.GetExecutingAssembly();
+            _resourcePrefix = $"{_assembly.GetName().Name}.Scenarios.";
         }
 
-        [TearDown]
-        public void TearDown()
+
+        [Test]
+        public void TestScenario()
         {
-            FinalizeConsoleApplication(_process);
+            var scenarioResources = GetAllScenarioResources();
+            foreach (var scenarioResource in scenarioResources)
+            {
+                var scenario = LoadScenario(scenarioResource);
+                var scenarioName = scenarioResource.Substring(_resourcePrefix.Length);
+
+                var process = StartConsoleApplication("");
+
+                try
+                {
+                    AssertScenario(process, scenarioName, scenario);
+                }
+                finally
+                {
+                    FinalizeConsoleApplication(process);
+                }
+            }
         }
 
-        [TestCase("")]
-        public void TestScenario(string scenarioName)
+        private IEnumerable<string> GetAllScenarioResources()
         {
-            var scenario = LoadScenario(scenarioName);
-            AssertScenario(_process, scenario);
+            var assembly = Assembly.GetExecutingAssembly();
+            string[] resourceNames = assembly.GetManifestResourceNames();
+
+            return resourceNames.Where(x => x.StartsWith(_resourcePrefix))
+                .OrderBy(x => x);
         }
 
-        private void AssertScenario(Process process, string scenario)
+        private void AssertScenario(Process process, string scenarioName, string scenario)
         {
             var output = process.StandardOutput;
             var input = process.StandardInput;
             var error = process.StandardError;
 
-            using (var scenarioReader = new StringReader(scenario))
+            var echo = new StringBuilder();
+            var lineNumber = 0;
+
+            try
             {
-                string line;
-                while ((line = scenarioReader.ReadLine()) is not null)
+                using (var scenarioReader = new StringReader(scenario))
                 {
-                    if (string.IsNullOrWhiteSpace(line))
+                    string line;
+                    while ((line = scenarioReader.ReadLine()) is not null)
                     {
-                        continue;
+                        lineNumber++;
+
+                        if (string.IsNullOrWhiteSpace(line))
+                        {
+                            continue;
+                        }
+
+                        if (line.StartsWith(">>"))
+                        {
+                            var text = line.Substring(2);
+                            AssertOutput(output, text, echo);
+                            continue;
+                        }
+
+                        if (line.StartsWith("<<"))
+                        {
+                            var text = line.Substring(2);
+                            AssertInput(process, input, text, echo);
+                            continue;
+                        }
+
+                        AssertInput(process, input, line, echo);
                     }
-
-                    if(line.StartsWith(">>"))
-                    {
-                        var text = line.Substring(2);
-                        AssertOutput(output, text);
-                        continue;
-                    }
-
-                    if (line.StartsWith("<<"))
-                    {
-                        var text = line.Substring(2);
-                        AssertInput(input, text);
-                        continue;
-                    }
-
-                    AssertInput(input, line);
-
-                    // TODO: handle error
                 }
-            }
 
-            AssertEndOfOutput(output);
-            AssertEndOfProgramm();
+                AssertEndOfOutput(output);
+                AssertEndOfProgramm(process);
+            }
+            catch(AssertionException ex)
+            {
+                echo.AppendLine();
+                echo.AppendLine($"Error execuling scenario {scenarioName}");
+                echo.AppendLine($"   file name: {scenarioName}");
+                echo.AppendLine($"   line: {lineNumber}");
+                echo.AppendLine();
+                echo.AppendLine(ex.Message);
+
+                Console.WriteLine(echo.ToString());
+
+                throw;
+            }
         }
 
-        private void AssertEndOfProgramm()
+        private void AssertEndOfProgramm(Process process)
         {
-            Assert.IsTrue(_process.HasExited, "Has the program exited?");
+            Assert.IsTrue(process.HasExited, "Has the program exited?");
         }
 
         private static void AssertEndOfOutput(StreamReader output)
@@ -81,16 +122,16 @@ namespace CoffeeMachine.Tests
             Assert.IsTrue(output.EndOfStream, $"Expected end of output, but was:\n{output.ReadToEnd()}");
         }
 
-        private void AssertInput(StreamWriter input, string text)
+        private void AssertInput(Process process, StreamWriter input, string text, StringBuilder echo)
         {
-            Assert.IsFalse(_process.HasExited, "Expected input, but the program has exited");
+            Assert.IsFalse(process.HasExited, "Expected input, but the program has exited");
 
-            Console.WriteLine($"<<{text}");
+            echo.AppendLine($"{text}");
 
             input.WriteLine(text);
         }
 
-        private void AssertOutput(StreamReader output, string text)
+        private void AssertOutput(StreamReader output, string text, StringBuilder echo)
         {
             var read = output.ReadLineAsync();
             read.Wait(100);
@@ -98,7 +139,7 @@ namespace CoffeeMachine.Tests
             {
                 var outputLine = read.Result;
 
-                Console.WriteLine($">>{outputLine}");
+                echo.AppendLine($">>{outputLine}");
 
                 Assert.IsNotNull(outputLine, $"Expected output line '{text}' but was nothing");
                 StringAssert.AreEqualIgnoringCase(text, outputLine);
@@ -109,12 +150,11 @@ namespace CoffeeMachine.Tests
             }
         }
 
-        private static string LoadScenario(string scenarioName)
+        private static string LoadScenario(string scenarioResource)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = $"CoffeeMachine.Tests.Scenarios.{scenarioName}.txt";
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (Stream stream = assembly.GetManifestResourceStream(scenarioResource))
             using (StreamReader reader = new StreamReader(stream))
             {
                 return reader.ReadToEnd();
