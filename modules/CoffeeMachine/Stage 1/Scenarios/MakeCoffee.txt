@@ -2,19 +2,12 @@
 >>Hello, how can I help you?
 >>1. Make coffee
 >>0. Exit
-<<7
->>Wrong choice :) Try again ;)
+<<1
+>>Good choice, enjoy your coffee!
 >>
 >>=====
 >>Hello, how can I help you?
 >>1. Make coffee
 >>0. Exit
-<<s
->>Wrong choice :) Try again ;)
->>
->>=====
->>Hello, how can I help you?
->>1. Make coffee
->>0. Exit
->>0
+<<0
 >>Have a good day!

@@ -9,7 +9,7 @@ Coffe beans 400 g
 Sugar 300 g
 Milk 100 ml
 Water 2000 ml
-10 cups
+3 cups
 
 for making one portion of coffe you need:
 1 cup
@@ -22,4 +22,3 @@ Look at the links below, this might help you clarify:
 [Properties](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties)  
 [Operators and expressions](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/)  
 [Switch statement](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch)  
-

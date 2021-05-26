@@ -3,13 +3,16 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-<<2
+<<7
+>>Wrong choice :) Try again ;)
 >>
 >>=====
->>Service mode:
->>1. Show remainings
->>0. Back
-<<0
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+<<s
+>>Wrong choice :) Try again ;)
 >>
 >>=====
 >>Hello, how can I help you?
