@@ -37,7 +37,7 @@ digraph ConceptsMap {
 		Strings -> "string.Equals";
 
 		
-		label = "Stage 3 Concepts";
+		label = "Stage 4 Concepts";
 	}
 
 }
