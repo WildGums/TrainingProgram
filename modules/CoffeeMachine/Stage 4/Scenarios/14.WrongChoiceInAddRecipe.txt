@@ -1,0 +1,90 @@
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+3
+>>Please enter the name of the coffee product:
+Espresso
+>>Coffee beans (g)
+40
+>>Sugar (g)
+0
+>>Milk (ml)
+0
+>>Water (ml)
+50
+>>Cups (pcs)
+-3
+>>Only positive or zero integers allowed for entering supplies
+>>All entered values will be ignored
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+3
+>>Please enter the name of the coffee product:
+Espresso
+>>Coffee beans (g)
+40
+>>Sugar (g)
+0
+>>Milk (ml)
+0
+>>Water (ml)
+50
+>>Cups (pcs)
+sd
+>>Only positive or zero integers allowed for entering supplies
+>>All entered values will be ignored
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+3
+>>Please enter the name of the coffee product:
+Espresso
+>>Coffee beans (g)
+40
+>>Sugar (g)
+0
+>>Milk (ml)
+0
+>>Water (ml)
+50
+>>Cups (pcs)
+1
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+0
+>>Have a good day!
