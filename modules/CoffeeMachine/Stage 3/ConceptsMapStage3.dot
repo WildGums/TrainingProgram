@@ -5,20 +5,26 @@ digraph ConceptsMap {
 		style=filled;
 		color="#00c77b";
         
-		node [style = filled color = "#bdffd7" shape = box] Namespaces;
-        node [] Variables;
+		node [style = filled color = "#bdffd7" shape = box];
+        
+		
 		node [] "Operators and expressions";
-		node [] Strings;
+		node [] Variables;
+		node [] Classes;
         node [] "Loop and branch statements";
 		node [] "Console and its methods";
-        node [] Classes;
-
+        
+		Classes -> Constructor;
+		Classes -> Fields;
         Classes -> Methods;
 		Classes -> Properties;
-		Classes -> Constructor;
+		
 
 		"Console and its methods" -> "WriteLine";
 		"Console and its methods" -> "ReadLine";
+		"WriteLine" -> "Strings"
+		"ReadLine" -> "Types"
+		"ReadLine" -> "Type conversions"
 
 		"Loop and branch statements" -> "If  - else"
 		"Loop and branch statements" -> "While";
@@ -26,14 +32,10 @@ digraph ConceptsMap {
 
 		"Operators and expressions" -> "Boolean logical operators";
 		"Operators and expressions" -> "Arithmetic operators";
-
-		Variables -> "Local value";
-		Variables -> "Global value";
-
-		Strings -> TryParse;
-		Strings -> "string.Equals";
-
 		
+		"Methods" -> "Method parameters vs. arguments";
+		"Methods" -> "Return values";
+
 		label = "Stage 3 Concepts";
 	}
 

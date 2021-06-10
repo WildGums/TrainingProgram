@@ -3,22 +3,31 @@
 >>1. Make coffee
 >>2. Service mode
 >>0. Exit
-2
+1
 >>
 >>=====
->>Service mode:
->>1. Show remainings
->>2. Add supplies
+>>What type of coffee do you prefer?
+>>1. Americano
+>>2. Capuccino
 >>0. Back
 3
 >>Wrong choice :) Try again ;)
 >>
 >>=====
->>Service mode:
->>1. Show remainings
->>2. Add supplies
+>>What type of coffee do you prefer?
+>>1. Americano
+>>2. Capuccino
 >>0. Back
-0
+s
+>>Wrong choice :) Try again ;)
+>>
+>>=====
+>>What type of coffee do you prefer?
+>>1. Americano
+>>2. Capuccino
+>>0. Back
+1
+>>Good choice, enjoy your coffee!
 >>
 >>=====
 >>Hello, how can I help you?

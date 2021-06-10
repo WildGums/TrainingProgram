@@ -16,6 +16,13 @@
 >>Service mode:
 >>1. Show remainings
 >>0. Back
+<<s
+>>Wrong choice :) Try again ;)
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>0. Back
 <<0
 >>
 >>=====
