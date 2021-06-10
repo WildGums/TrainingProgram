@@ -1,0 +1,90 @@
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+3
+>>Please enter the name of the coffee product:
+Espresso
+>>Coffee beans (g)
+40
+>>Sugar (g)
+0
+>>Milk (ml)
+0
+>>Water (ml)
+50
+>>Cups (pcs)
+1
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+1
+>>
+>>=====
+>>What type of coffee do you prefer?
+>>1. Americano
+>>2. Capuccino
+>>3. Espresso
+>>0. Back
+3
+>>Good choice, enjoy your coffee!
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+1
+>>Coffee beans 360 g
+>>Sugar 300 g
+>>Milk 100 ml
+>>Water 1950 ml
+>>Cups 2 pcs
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+0
+>>Have a good day!

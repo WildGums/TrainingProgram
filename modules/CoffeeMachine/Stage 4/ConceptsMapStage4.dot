@@ -14,11 +14,19 @@ digraph ConceptsMap {
 		node [] Collections;
         node [] Classes;
 
+		LINQ -> Queryable -> FirstOrDefault;
+
         Classes -> Methods -> Parameters;
 		Classes -> Properties;
-		Classes -> Constructor;
+		Classes -> Constructor -> Initializer;
+		Classes -> "Abstract class";
+		Classes -> Interface;
+
+		Interface -> IEnumerable;
 
 		Collections -> Dictionary;
+		Collections -> List;
+		Collections -> IEnumerable;
 
 		"Console and its methods" -> "WriteLine";
 		"Console and its methods" -> "ReadLine";
@@ -26,6 +34,7 @@ digraph ConceptsMap {
 		"Loop and branch statements" -> "If  - else"
 		"Loop and branch statements" -> "While";
 		"Loop and branch statements" -> "Switch";
+		"Loop and branch statements" -> ForEach;
 
 		"Operators and expressions" -> "Boolean logical operators";
 		"Operators and expressions" -> "Arithmetic operators";
@@ -34,7 +43,7 @@ digraph ConceptsMap {
 		Variables -> "Global value";
 
 		Strings -> TryParse;
-		Strings -> "string.Equals";
+		Strings -> "String.Equals";
 
 		
 		label = "Stage 4 Concepts";
