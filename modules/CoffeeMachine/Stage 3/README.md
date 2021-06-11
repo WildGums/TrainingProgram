@@ -24,3 +24,4 @@ To complete this stage the links below might be helpful:
 
 [TryParse Method](https://docs.microsoft.com/en-us/dotnet/api/system.int32.tryparse?view=net-5.0)  
 [Boolean logical operators](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators)
+[Methods, Method parameters vs. arguments, Return values](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods)
