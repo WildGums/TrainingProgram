@@ -1,0 +1,37 @@
+﻿>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+2
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+1
+>>Coffee beans 400 g
+>>Sugar 300 g
+>>Milk 100 ml
+>>Water 2000 ml
+>>Cups 3 pcs
+>>
+>>=====
+>>Service mode:
+>>1. Show remainings
+>>2. Add supplies
+>>3. Add recipe
+>>4. Add ingredient
+>>0. Back
+0
+>>
+>>=====
+>>Hello, how can I help you?
+>>1. Make coffee
+>>2. Service mode
+>>0. Exit
+0
+>>Have a good day!

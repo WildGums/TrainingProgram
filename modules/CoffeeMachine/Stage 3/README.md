@@ -2,23 +2,76 @@
 
 ## Stage 3
 
-In stis stage you should be able to make two types of coffee
+In stis stage you should be able to make two types of coffee and to add supplies.
 
-for making one portion of capuccino you need:
+**For making one portion of capuccino you need:**
+
 1 cup
+
 10g of sugar
+
 30g of coffee
+
 50ml of water
+
 50 ml of milk
 
-for making one portion of americano you need:
+**For making one portion of americano you need:**
+
 1 cup
+
 5g of sugar
+
 40g of coffee
+
 50ml of water
+
 0 ml of milk
 
-And in this stage you should be able to add supplies.
+##### This is example how it should look like:
+
+****
+Making coffee example:
+
+```html
+Hello, how can I help you?
+1. Make coffee
+2. Service mode
+0. Exit
+1
+What type of coffee do you prefer?
+1. Americano
+2. Capuccino
+0. Back
+1
+Good choice, enjoy your coffee!
+```
+Then make sure if the available quantity of supplies has decreased by recipe required value
+
+Add supplies example:
+
+```html
+=====
+Service mode:
+1. Show remainings
+2. Add supplies
+0. Back
+2
+Please add supply:
+Coffe beans (g)
+20
+Sugar (g)
+15
+Milk (ml)
+22
+Water (ml)
+50
+Cups
+2
+```
+Then make sure if the available quantity of supplies has increased by the entered values
+
+****
 
 To complete this stage the links below might be helpful:
 

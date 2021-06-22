@@ -28,6 +28,35 @@ Make changes to the Program.cs until the output in the console window matches th
 A stage is considered successful when all tests are succeeded at the same time.(Use the Run All Tests button.)
 
 
+##### Interaction example:
+
+In case of exit:
+```html
+Hello, how can I help you?
+1. Make coffee
+0. Exit
+0
+Have a good day!
+```
+
+In case of making coffee:
+
+```html
+Hello, how can I help you?
+1. Make coffee
+2. Service mode
+0. Exit
+1
+Good choice, enjoy your coffee!
+```
+
+#### Important!
+**Please carefully check the test scenarios while writing the program in this and next stages.  
+Make sure the output is correct.** 
+****
+
+
+
 To complete this stage the links below might be helpful:
 
 [The structure of the program. Main() method](https://metanit.com/sharp/tutorial/1.5.php)
