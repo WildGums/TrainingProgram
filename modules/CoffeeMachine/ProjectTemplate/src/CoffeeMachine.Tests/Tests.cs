@@ -12,13 +12,12 @@ namespace CoffeeMachine.Tests
     [TestFixture]
     public class Tests
     {
-        private readonly Assembly _assembly;
         private readonly string _resourcePrefix;
 
         public Tests()
         {
-            _assembly = Assembly.GetExecutingAssembly();
-            _resourcePrefix = $"{_assembly.GetName().Name}.Scenarios.";
+            var assembly = Assembly.GetExecutingAssembly();
+            _resourcePrefix = $"{assembly.GetName().Name}.Scenarios.";
         }
 
 
@@ -95,12 +94,12 @@ namespace CoffeeMachine.Tests
                 }
 
                 AssertEndOfOutput(output);
-                AssertEndOfProgramm(process);
+                AssertEndOfProgram(process);
             }
             catch(AssertionException ex)
             {
                 echo.AppendLine();
-                echo.AppendLine($"Error execuling scenario {scenarioName}");
+                echo.AppendLine($"Error executing scenario {scenarioName}");
                 echo.AppendLine($"   file name: {scenarioName}");
                 echo.AppendLine($"   line: {lineNumber}");
                 echo.AppendLine();
@@ -112,7 +111,7 @@ namespace CoffeeMachine.Tests
             }
         }
 
-        private void AssertEndOfProgramm(Process process)
+        private void AssertEndOfProgram(Process process)
         {
             Assert.IsTrue(process.HasExited, "Has the program exited?");
         }
