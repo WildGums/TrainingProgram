@@ -1,4 +1,5 @@
 Elevator
+
 A console application that simulates the behavior of an elevator.
 
 Stage 1
