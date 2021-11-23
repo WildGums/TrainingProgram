@@ -1,0 +1,13 @@
+>>Hello!
+>>Enter the number of floors
+10
+>>Enter the current floor
+1
+>> [1]
+>> [<<] [>>]
+>> [>>][<<]
+>> [2]
+>> [3]
+>> [4]
+>> [5]
+>> [<<] [>>]

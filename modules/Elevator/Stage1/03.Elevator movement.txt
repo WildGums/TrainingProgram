@@ -1,0 +1,33 @@
+>>Hello!
+>>Enter the number of floors
+5
+>>Enter the current floor
+1
+>> [<<] [>>]
+>>Which floor do you want to go to?
+>>Press X to quit
+1
+>>You are already on this floor
+>>Which floor do you want to go to?
+>>Press X to quit
+5
+>> [>>][<<]
+>> [1]
+>> [2]
+>> [3]
+>> [4]
+>> [5]
+>> [<<] [>>]
+>>Which floor do you want to go to?
+>>Press X to quit
+2
+>> [>>][<<]
+>> [5]
+>> [4]
+>> [3]
+>> [2]
+>> [<<] [>>]
+>>Which floor do you want to go to?
+>>Press X to quit
+X
+>>Have a good day!

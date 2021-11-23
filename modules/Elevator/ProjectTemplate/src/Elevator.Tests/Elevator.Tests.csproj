@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scenarios\01.Exit.txt" />
+    <None Remove="Scenarios\02.Choose floor.txt" />
+    <None Remove="Scenarios\03.Elevator movement.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scenarios\01.Exit.txt" />
+    <EmbeddedResource Include="Scenarios\02.Choose floor.txt" />
+    <EmbeddedResource Include="Scenarios\03.Elevator movement.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elevator\Elevator.csproj" />
+  </ItemGroup>
+
+</Project>

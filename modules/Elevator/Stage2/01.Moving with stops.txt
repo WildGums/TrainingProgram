@@ -1,0 +1,54 @@
+>>Hello!
+>>Enter the number of floors
+15
+>>Enter the current floor
+1
+>> [<<] [>>]
+>>Enter the floor numbers where the elevator should stop, then enter Go
+>>Press X to quit
+5
+8
+12
+Go
+>> [>>][<<]
+>> [2]
+>> [3]
+>> [4]
+>> [5]
+>> [<<] [>>]
+>> [>>][<<]
+>> [6]
+>> [7]
+>> [8]
+>> [<<] [>>]
+>> [>>][<<]
+>> [9]
+>> [10]
+>> [11]
+>> [12]
+>> [<<] [>>]
+>>Enter the floor numbers where the elevator should stop, then enter Go
+>>Press X to quit
+11
+7
+3
+Go
+>> [>>][<<]
+>> [11]
+>> [<<] [>>]
+>> [>>][<<]
+>> [10]
+>> [9]
+>> [8]
+>> [7]
+>> [<<] [>>]
+>> [>>][<<]
+>> [6]
+>> [5]
+>> [4]
+>> [3]
+>> [<<] [>>]
+>>Enter the floor numbers where the elevator should stop, then enter Go
+>>Press X to quit
+X
+>>Have a good day!
