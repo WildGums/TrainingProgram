@@ -1,0 +1,3 @@
+>>Enter the required floor
+>>Press X to quit
+5

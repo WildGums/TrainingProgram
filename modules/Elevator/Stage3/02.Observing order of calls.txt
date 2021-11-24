@@ -1,0 +1,39 @@
+>>Hello!
+>>Enter the number of floors
+20
+>>Enter the current floor
+4
+>> [<<] [>>]
+>>Enter the required floor
+>>Press X to quit
+11
+>> [>>][<<]
+>> [5]
+>> [6]
+>> [7]
+17
+>> [8]
+>> [9]
+>> [10]
+>> [11]
+>> [<<] [>>]
+>> [>>][<<]
+>> [12]
+>> [13]
+12
+>> [14]
+>> [15]
+>> [16]
+>> [17]
+>> [<<] [>>]
+>> [>>][<<]
+>> [16]
+>> [15]
+>> [14]
+>> [13]
+>> [12]
+>> [<<] [>>]
+>>Enter the required floor
+>>Press X to quit
+x
+>>Have a good day!
